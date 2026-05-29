@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>THE ROOTSTOCK</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* 影片背景 */
+    #bg-video {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: #000;
+      z-index: -2;
+      opacity: 0.9;
+    }
+
+    /* 圖片背景（用圖片時取消 video 改用這個） */
+    #bg-image {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      opacity: 0.45;
+    }
+
+    /* 半透明遮罩，讓詩歌文字可讀 */
+    #bg-overlay {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: -1;
+    }
+
+    /* 全螢幕 DNA 底紋 */
+    #dna-bg {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+      overflow: hidden;
+      opacity: 0.07;
+      color: #00cc00;
+      font-size: 0.52rem;
+      letter-spacing: 0.18em;
+      line-height: 1.55;
+      word-break: break-all;
+      padding: 12px 16px;
+    }
+    #canvas {
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 1;
+    }
+    #helix-layer {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 9999px;
+      pointer-events: none; z-index: 2;
+    }
+
+    .word-node {
+      position: absolute;
+      text-align: center;
+      will-change: transform, opacity;
+    }
+    .codon-tag {
+      display: block;
+      font-size: 0.62rem; letter-spacing: 0.26em;
+      margin-bottom: 4px; color: #3a6e3a;
+    }
+    .codon-tag.circadian       { color: #3a7a5a; }
+    .codon-tag.photosynthesis  { color: #7a6428; }
+    .codon-tag.stress_response { color: #7a3030; }
+    .word-text {
+      display: block;
+      font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+      letter-spacing: 0.08em; white-space: nowrap;
+      color: #ffffff;
+    }
+    .word-text.circadian, .word-text.photosynthesis, .word-text.stress_response { color: #ffffff; }
+
+    .cursor {
+      display: inline-block;
+      width: 0.42em; height: 0.82em;
+      background: currentColor;
+      vertical-align: text-bottom;
+      animation: blink 1.1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+
+    #meta {
+      position: fixed; top: 24px; right: 32px;
+      font-size: 0.62rem; letter-spacing: 0.1em;
+      color: #1e1e1e; text-align: right;
+      line-height: 2; text-transform: uppercase; z-index: 10;
+    }
+    #meta-function { color: #224422; }
+
+    #status {
+      position: fixed; top: 24px; left: 32px;
+      font-size: 0.6rem; letter-spacing: 0.1em;
+      color: #224422; text-transform: uppercase; z-index: 10;
+    }
+    #status.paused       { color: #666622; }
+    #status.disconnected { color: #441414; }
+
+    #title {
+      position: fixed; bottom: 36px; left: 32px;
+      font-size: 0.56rem; letter-spacing: 0.18em;
+      color: #131313; text-transform: uppercase; z-index: 10;
+    }
+
+    #presence-bar {
+      position: fixed; bottom: 36px; right: 32px;
+      width: 80px; height: 2px; background: #0d0d0d; z-index: 10;
+    }
+    #presence-fill {
+      height: 100%; width: 0%;
+      background: #224422;
+      transition: width 0.4s ease, background 0.4s ease;
+    }
+    #presence-val {
+      position: fixed; bottom: 44px; right: 32px;
+      font-size: 0.48rem; letter-spacing: 0.12em;
+      color: #181818; text-align: right; z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── 背景：影片或圖片二選一，另一個註解掉 ── -->
+
+<!-- 影片背景：把 bg.mp4 放進 rootstock/ 資料夾 -->
+<video id="bg-video" autoplay muted loop playsinline>
+  <source src="bg.mp4" type="video/mp4">
+</video>
+
+<!-- 圖片背景：把 bg.jpg 放進 rootstock/ 資料夾，同時把上面 video 標籤刪掉 -->
+<!-- <img id="bg-image" src="bg.jpg"> -->
+
+<!-- 遮罩：讓文字可讀 -->
+<div id="bg-overlay"></div>
+
+<div id="dna-bg"></div>
+<canvas id="canvas"></canvas>
+<div id="helix-layer"></div>
+
+<div id="meta">
+  <div id="meta-function">—</div>
+  <div id="meta-cycle">cycle 0</div>
+  <div id="meta-words">0 words</div>
+</div>
+<div id="status" class="disconnected">○ connecting</div>
+<div id="title">THE ROOTSTOCK &nbsp;·&nbsp; Arabidopsis thaliana &nbsp;·&nbsp; CCA1</div>
+<div id="presence-val">vibration 0.000</div>
+<div id="presence-bar"><div id="presence-fill"></div></div>
+
+<script>
+  // 填充全螢幕 DNA 底紋
+  (function() {
+    const bases = 'ATGCATGCATGCATGCATGCATGC';
+    const bg = document.getElementById('dna-bg');
+    const chars = Math.floor((window.innerWidth * window.innerHeight) / 28);
+    let seq = '';
+    for (let i = 0; i < chars; i++) seq += bases[i % bases.length];
+    bg.textContent = seq;
+    // WebSocket 更新底紋序列
+    window._updateDnaBg = function(newSeq) {
+      bg.textContent = (newSeq.repeat(80)).slice(0, chars);
+    };
+  })();
+
+  const WS_URL         = 'ws://127.0.0.1:8765';
+  const LINE_PAUSE     = 200;
+  const WORDS_PER_TURN = 8;
+  const FADE_START     = 80;   // 秒後開始消散
+  const FADE_END       = 115;  // 秒後完全消失
+  const MAX_SCENE_WORDS = 45;  // 累積到此數量 → 整批淡出，重置螺旋
+
+  let presenceLevel  = 0;
+  let sceneResetting = false;
+
+  const amplitude = () => 140 + presenceLevel * 100;  // 140→240 px
+  const wordStep  = () => 110 - presenceLevel * 30;   // 110→80 px
+  const charDelay = () => Math.round(95 - presenceLevel * 62);
+
+  const cx = () => window.innerWidth / 2;
+
+  // ── Canvas ────────────────────────────────────────
+  const canvas = document.getElementById('canvas');
+  const ctx    = canvas.getContext('2d');
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // ── Helix layer ───────────────────────────────────
+  const layer       = document.getElementById('helix-layer');
+  let currentScroll = 0;
+  let targetScroll  = 0;
+  let cumulativeY   = window.innerHeight - 140;  // 從畫面底部開始生長
+  let wordIndex     = 0;
+
+  // { el, baseX, baseY, phase, createdAt }
+  let wordNodes = [];
+
+  function updateTarget() {
+    targetScroll = Math.max(0, cumulativeY - (window.innerHeight - 110));
+  }
+
+  // ── Canvas strands ────────────────────────────────
+  function drawStrands(scroll) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const visible = wordNodes
+      .filter(n => {
+        const sy = n.baseY - scroll;
+        return sy > -30 && sy < canvas.height + 30;
+      })
+      .sort((a, b) => a.baseY - b.baseY);
+
+    if (visible.length < 2) return;
+
+    function smoothCurve(pts, col) {
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 1; i < pts.length - 1; i++) {
+        const mx = (pts[i].x + pts[i + 1].x) / 2;
+        const my = (pts[i].y + pts[i + 1].y) / 2;
+        ctx.quadraticCurveTo(pts[i].x, pts[i].y, mx, my);
+      }
+      const last = pts[pts.length - 1];
+      ctx.lineTo(last.x, last.y);
+      ctx.strokeStyle = col;
+      ctx.lineWidth   = 0.8;
+      ctx.stroke();
+    }
+
+    const s1 = visible.map(n => ({ x: n.baseX,             y: n.baseY - scroll }));
+    const s2 = visible.map(n => ({ x: 2 * cx() - n.baseX,  y: n.baseY - scroll }));
+    smoothCurve(s1, 'rgba(42, 108, 42, 0.32)');
+    smoothCurve(s2, 'rgba(42, 108, 42, 0.32)');
+
+    // 碱基對橫橋
+    ctx.setLineDash([2, 6]);
+    visible.forEach(({ baseX, baseY }) => {
+      const y = baseY - scroll;
+      ctx.beginPath();
+      ctx.moveTo(baseX,            y);
+      ctx.lineTo(2 * cx() - baseX, y);
+      ctx.strokeStyle = 'rgba(42, 108, 42, 0.07)';
+      ctx.lineWidth   = 0.5;
+      ctx.stroke();
+    });
+    ctx.setLineDash([]);
+  }
+
+  // ── 動畫主循環 ────────────────────────────────────
+  function animLoop() {
+    const now = Date.now() / 1000;
+
+    // 平滑滾動
+    const diff = targetScroll - currentScroll;
+    if (Math.abs(diff) > 0.3) {
+      currentScroll += diff * 0.055;
+      layer.style.transform = `translateY(${-currentScroll}px)`;
+    }
+
+    // 場景累積上限 → 整批淡出後重置
+    // 重置期間 typeLine() 會檢查 sceneResetting 並暫停排入新詞，
+    // 避免淡出時仍不斷累積 cumulativeY 造成重置後的「閃回」跳位
+    if (!sceneResetting && wordNodes.length >= MAX_SCENE_WORDS) {
+      sceneResetting = true;
+      const t0 = now;
+      wordNodes.forEach(n => {
+        n.createdAt = Math.min(n.createdAt, t0 - FADE_START - 1);
+      });
+      setTimeout(() => {
+        cumulativeY = window.innerHeight - 140;
+        wordIndex   = 0;
+        sceneResetting = false;
+      }, (FADE_END - FADE_START) * 1000 + 800);
+    }
+
+    const toRemove = [];
+    wordNodes.forEach(node => {
+      const { el, phase, freqX, freqY, driftR, createdAt } = node;
+      const age = now - createdAt;
+
+      // 浮游生物漂移：多頻正弦疊加，每個詞有獨立頻率
+      const drift = driftR + presenceLevel * 12;
+      const dx = Math.sin(now * freqX + phase)           * drift
+               + Math.sin(now * freqX * 2.6 + phase * 0.7) * drift * 0.32;
+      const dy = Math.cos(now * freqY + phase * 1.4)     * drift * 0.55
+               + Math.cos(now * freqY * 1.8 + phase)     * drift * 0.24;
+
+      // 高震動時加細微顫抖
+      const tx = presenceLevel > 0.25 ? (Math.random() - 0.5) * presenceLevel * 5 : 0;
+      const ty = presenceLevel > 0.25 ? (Math.random() - 0.5) * presenceLevel * 3 : 0;
+
+      el.style.transform =
+        `translateX(calc(-50% + ${(dx + tx).toFixed(2)}px)) translateY(${(dy + ty).toFixed(2)}px)`;
+
+      if (age > FADE_END) {
+        toRemove.push(node);
+      } else if (age > FADE_START) {
+        const t = (age - FADE_START) / (FADE_END - FADE_START);
+        el.style.opacity = (1 - t).toFixed(3);
+      }
+    });
+
+    toRemove.forEach(n => {
+      n.el.remove();
+      wordNodes.splice(wordNodes.indexOf(n), 1);
+    });
+
+    drawStrands(currentScroll);
+    requestAnimationFrame(animLoop);
+  }
+  animLoop();
+
+  // ── 打字機 ────────────────────────────────────────
+  let typeQueue = [];
+  let isTyping  = false;
+  let currentFn = '';
+
+  const now = () => Date.now() / 1000;
+
+  async function typeLine({ text, codons, fn }) {
+    const idx   = wordIndex++;
+    const t     = (idx / WORDS_PER_TURN) * 2 * Math.PI;
+    const baseX = cx() + amplitude() * Math.sin(t);
+    const baseY = cumulativeY;
+    cumulativeY += wordStep();
+
+    const node = document.createElement('div');
+    node.className  = 'word-node';
+    node.style.left = baseX + 'px';
+    node.style.top  = baseY + 'px';
+    node.style.transform = 'translateX(-50%)';
+
+    if (codons) {
+      const ct = document.createElement('span');
+      ct.className   = `codon-tag ${fn}`;
+      ct.textContent = codons;
+      node.appendChild(ct);
+    }
+    const wt = document.createElement('span');
+    wt.className = `word-text ${fn}`;
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    wt.appendChild(cursor);
+    node.appendChild(wt);
+    layer.appendChild(node);
+
+    wordNodes.push({
+      el: node, baseX, baseY,
+      phase:  Math.random() * Math.PI * 2,
+      freqX:  0.10 + Math.random() * 0.22,
+      freqY:  0.07 + Math.random() * 0.15,
+      driftR: 14 + Math.random() * 24,
+      createdAt: now()
+    });
+    updateTarget();
+
+    for (let i = 0; i < text.length; i++) {
+      await new Promise(r => setTimeout(r, charDelay()));
+      wt.insertBefore(document.createTextNode(text[i]), cursor);
+    }
+    cursor.remove();
+    await new Promise(r => setTimeout(r, LINE_PAUSE));
+  }
+
+  async function processQueue() {
+    if (isTyping) return;
+    isTyping = true;
+    while (typeQueue.length > 0) {
+      // 場景重置中暫停打字，等舊批次完全淡出後再繼續
+      // 避免新詞被加到正在消散的螺旋上造成位置跳躍
+      if (sceneResetting) {
+        await new Promise(r => setTimeout(r, 500));
+        continue;
+      }
+      await typeLine(typeQueue.shift());
+    }
+    isTyping = false;
+  }
+
+  // ── UI ────────────────────────────────────────────
+  const metaFunction = document.getElementById('meta-function');
+  const metaCycle    = document.getElementById('meta-cycle');
+  const metaWords    = document.getElementById('meta-words');
+  const statusEl     = document.getElementById('status');
+  const presenceFill = document.getElementById('presence-fill');
+  const presenceVal  = document.getElementById('presence-val');
+
+  // ── WebSocket ─────────────────────────────────────
+  function connect() {
+    console.log('Connecting WebSocket to', WS_URL);
+    const ws = new WebSocket(WS_URL);
+
+    ws.onopen  = () => {
+      console.log('WebSocket open');
+      statusEl.textContent = '● running';
+      statusEl.className = '';
+    };
+    ws.onclose = () => {
+      console.log('WebSocket closed');
+      statusEl.textContent = '○ disconnected — retrying';
+      statusEl.className   = 'disconnected';
+      setTimeout(connect, 1000);
+    };
+    ws.onerror = (err) => {
+      console.error('WebSocket error', err);
+    };
+
+    ws.onmessage = ({ data }) => {
+      const msg = JSON.parse(data);
+      console.log('WebSocket received', msg.type, msg);
+
+      if (msg.type === 'line') {
+        // 優先使用 Python 端計算好的主要 function（多數決），
+        // 若沒有則退回到最後一個 codon 的 function
+        typeQueue.push({
+          text:   msg.text,
+          codons: msg.codons || '',
+          fn:     msg.function || currentFn
+        });
+        processQueue();
+      }
+      if (msg.type === 'codon') {
+        currentFn                = msg.function || '';
+        metaFunction.textContent = msg.function || '—';
+      }
+      if (msg.type === 'cycle') {
+        metaCycle.textContent = `cycle ${msg.cycle}`;
+        metaWords.textContent = `${msg.word_count} words`;
+      }
+      if (msg.type === 'dna') {
+        if (window._updateDnaBg) window._updateDnaBg(msg.sequence);
+      }
+      if (msg.type === 'presence') {
+        presenceLevel = msg.level || 0;
+        presenceFill.style.width      = (presenceLevel * 100) + '%';
+        presenceFill.style.background = presenceLevel > 0.6 ? '#883030'
+                                      : presenceLevel > 0.3 ? '#786020'
+                                      :                        '#224422';
+        presenceVal.textContent = `vibration ${presenceLevel.toFixed(3)}`;
+      }
+      if (msg.type === 'status') {
+        statusEl.textContent = msg.value === 'paused' ? '⏸ paused' : '● running';
+        statusEl.className   = msg.value === 'paused' ? 'paused' : '';
+      }
+    };
+  }
+
+  connect();
+</script>
+</body>
+</html>

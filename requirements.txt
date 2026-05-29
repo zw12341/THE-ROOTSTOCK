@@ -1,0 +1,10 @@
+biopython
+sentence-transformers
+scikit-learn
+wordfreq
+numpy
+websockets
+pyserial
+python-osc
+transformers
+torch

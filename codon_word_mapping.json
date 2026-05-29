@@ -1,0 +1,1022 @@
+{
+  "circadian": {
+    "TTT": {
+      "word": "time",
+      "semantic_score": 2.6584,
+      "word_frequency": 0.00195,
+      "gene_function": "circadian"
+    },
+    "ATG": {
+      "word": "night",
+      "semantic_score": 3.6625,
+      "word_frequency": 0.000407,
+      "gene_function": "circadian"
+    },
+    "CTG": {
+      "word": "death",
+      "semantic_score": 2.6449,
+      "word_frequency": 0.000251,
+      "gene_function": "circadian"
+    },
+    "CTT": {
+      "word": "morning",
+      "semantic_score": 3.2374,
+      "word_frequency": 0.000214,
+      "gene_function": "circadian"
+    },
+    "AGA": {
+      "word": "light",
+      "semantic_score": 2.7738,
+      "word_frequency": 0.000214,
+      "gene_function": "circadian"
+    },
+    "CAA": {
+      "word": "turn",
+      "semantic_score": 2.7309,
+      "word_frequency": 0.000209,
+      "gene_function": "circadian"
+    },
+    "ACA": {
+      "word": "fire",
+      "semantic_score": 2.7526,
+      "word_frequency": 0.0002,
+      "gene_function": "circadian"
+    },
+    "ATC": {
+      "word": "rest",
+      "semantic_score": 3.2015,
+      "word_frequency": 0.00017,
+      "gene_function": "circadian"
+    },
+    "GAA": {
+      "word": "sex",
+      "semantic_score": 2.9808,
+      "word_frequency": 0.000166,
+      "gene_function": "circadian"
+    },
+    "TTC": {
+      "word": "return",
+      "semantic_score": 2.6948,
+      "word_frequency": 0.000155,
+      "gene_function": "circadian"
+    },
+    "TGT": {
+      "word": "movie",
+      "semantic_score": 2.7276,
+      "word_frequency": 0.000145,
+      "gene_function": "circadian"
+    },
+    "AAG": {
+      "word": "sound",
+      "semantic_score": 2.6744,
+      "word_frequency": 0.000141,
+      "gene_function": "circadian"
+    },
+    "CTA": {
+      "word": "bed",
+      "semantic_score": 3.1577,
+      "word_frequency": 0.000117,
+      "gene_function": "circadian"
+    },
+    "CAG": {
+      "word": "sleep",
+      "semantic_score": 3.4009,
+      "word_frequency": 0.000112,
+      "gene_function": "circadian"
+    },
+    "CTC": {
+      "word": "dark",
+      "semantic_score": 3.0598,
+      "word_frequency": 0.00011,
+      "gene_function": "circadian"
+    },
+    "GCA": {
+      "word": "beat",
+      "semantic_score": 2.7947,
+      "word_frequency": 0.000102,
+      "gene_function": "circadian"
+    },
+    "GAG": {
+      "word": "sun",
+      "semantic_score": 2.8,
+      "word_frequency": 9.33e-05,
+      "gene_function": "circadian"
+    },
+    "TTG": {
+      "word": "dance",
+      "semantic_score": 2.8434,
+      "word_frequency": 8.51e-05,
+      "gene_function": "circadian"
+    },
+    "GGA": {
+      "word": "dream",
+      "semantic_score": 2.9379,
+      "word_frequency": 8.13e-05,
+      "gene_function": "circadian"
+    },
+    "AGG": {
+      "word": "finish",
+      "semantic_score": 2.7217,
+      "word_frequency": 8.13e-05,
+      "gene_function": "circadian"
+    },
+    "TCT": {
+      "word": "machine",
+      "semantic_score": 2.6501,
+      "word_frequency": 7.94e-05,
+      "gene_function": "circadian"
+    },
+    "ATT": {
+      "word": "evening",
+      "semantic_score": 3.2115,
+      "word_frequency": 7.24e-05,
+      "gene_function": "circadian"
+    },
+    "TGA": {
+      "word": "jack",
+      "semantic_score": 2.6797,
+      "word_frequency": 6.61e-05,
+      "gene_function": "circadian"
+    },
+    "GTG": {
+      "word": "rise",
+      "semantic_score": 2.6931,
+      "word_frequency": 6.46e-05,
+      "gene_function": "circadian"
+    },
+    "ACC": {
+      "word": "continues",
+      "semantic_score": 2.6855,
+      "word_frequency": 6.17e-05,
+      "gene_function": "circadian"
+    },
+    "AGT": {
+      "word": "wake",
+      "semantic_score": 3.7971,
+      "word_frequency": 5.75e-05,
+      "gene_function": "circadian"
+    },
+    "TGC": {
+      "word": "turns",
+      "semantic_score": 2.6412,
+      "word_frequency": 5.75e-05,
+      "gene_function": "circadian"
+    },
+    "TGG": {
+      "word": "tired",
+      "semantic_score": 3.0392,
+      "word_frequency": 5.13e-05,
+      "gene_function": "circadian"
+    },
+    "GTT": {
+      "word": "ending",
+      "semantic_score": 2.7706,
+      "word_frequency": 4.79e-05,
+      "gene_function": "circadian"
+    },
+    "GGT": {
+      "word": "quiet",
+      "semantic_score": 2.72,
+      "word_frequency": 4.47e-05,
+      "gene_function": "circadian"
+    },
+    "CAT": {
+      "word": "breakfast",
+      "semantic_score": 2.7202,
+      "word_frequency": 4.07e-05,
+      "gene_function": "circadian"
+    },
+    "AAC": {
+      "word": "cycle",
+      "semantic_score": 2.9827,
+      "word_frequency": 3.98e-05,
+      "gene_function": "circadian"
+    },
+    "GAT": {
+      "word": "dreams",
+      "semantic_score": 3.1729,
+      "word_frequency": 3.89e-05,
+      "gene_function": "circadian"
+    },
+    "AGC": {
+      "word": "singing",
+      "semantic_score": 2.6646,
+      "word_frequency": 3.89e-05,
+      "gene_function": "circadian"
+    },
+    "TAT": {
+      "word": "kiss",
+      "semantic_score": 2.7249,
+      "word_frequency": 3.8e-05,
+      "gene_function": "circadian"
+    },
+    "CCT": {
+      "word": "sleeping",
+      "semantic_score": 3.409,
+      "word_frequency": 3.63e-05,
+      "gene_function": "circadian"
+    },
+    "ACT": {
+      "word": "defeat",
+      "semantic_score": 2.6644,
+      "word_frequency": 3.24e-05,
+      "gene_function": "circadian"
+    },
+    "TCA": {
+      "word": "dancing",
+      "semantic_score": 2.6379,
+      "word_frequency": 3.16e-05,
+      "gene_function": "circadian"
+    },
+    "GTA": {
+      "word": "nights",
+      "semantic_score": 3.3703,
+      "word_frequency": 2.95e-05,
+      "gene_function": "circadian"
+    },
+    "AAT": {
+      "word": "silence",
+      "semantic_score": 2.7653,
+      "word_frequency": 2.88e-05,
+      "gene_function": "circadian"
+    },
+    "AAA": {
+      "word": "egg",
+      "semantic_score": 2.6938,
+      "word_frequency": 2.88e-05,
+      "gene_function": "circadian"
+    },
+    "GGG": {
+      "word": "mood",
+      "semantic_score": 2.6729,
+      "word_frequency": 2.75e-05,
+      "gene_function": "circadian"
+    },
+    "TTA": {
+      "word": "clock",
+      "semantic_score": 3.0011,
+      "word_frequency": 2.69e-05,
+      "gene_function": "circadian"
+    },
+    "TAA": {
+      "word": "asleep",
+      "semantic_score": 3.2686,
+      "word_frequency": 2.29e-05,
+      "gene_function": "circadian"
+    },
+    "CCA": {
+      "word": "bang",
+      "semantic_score": 2.6816,
+      "word_frequency": 2.09e-05,
+      "gene_function": "circadian"
+    },
+    "GTC": {
+      "word": "midnight",
+      "semantic_score": 2.8244,
+      "word_frequency": 2.04e-05,
+      "gene_function": "circadian"
+    },
+    "CAC": {
+      "word": "darkness",
+      "semantic_score": 3.122,
+      "word_frequency": 2e-05,
+      "gene_function": "circadian"
+    },
+    "GAC": {
+      "word": "timing",
+      "semantic_score": 2.9305,
+      "word_frequency": 1.95e-05,
+      "gene_function": "circadian"
+    },
+    "ATA": {
+      "word": "loop",
+      "semantic_score": 2.7003,
+      "word_frequency": 1.95e-05,
+      "gene_function": "circadian"
+    },
+    "CCC": {
+      "word": "alarm",
+      "semantic_score": 2.9904,
+      "word_frequency": 1.91e-05,
+      "gene_function": "circadian"
+    },
+    "CGA": {
+      "word": "dawn",
+      "semantic_score": 3.2483,
+      "word_frequency": 1.86e-05,
+      "gene_function": "circadian"
+    },
+    "TAG": {
+      "word": "chaos",
+      "semantic_score": 2.7395,
+      "word_frequency": 1.86e-05,
+      "gene_function": "circadian"
+    },
+    "GCT": {
+      "word": "woke",
+      "semantic_score": 3.3838,
+      "word_frequency": 1.66e-05,
+      "gene_function": "circadian"
+    },
+    "CGG": {
+      "word": "slept",
+      "semantic_score": 3.1921,
+      "word_frequency": 1.51e-05,
+      "gene_function": "circadian"
+    },
+    "GGC": {
+      "word": "endless",
+      "semantic_score": 2.6998,
+      "word_frequency": 1.51e-05,
+      "gene_function": "circadian"
+    },
+    "TCG": {
+      "word": "awake",
+      "semantic_score": 3.429,
+      "word_frequency": 1.38e-05,
+      "gene_function": "circadian"
+    },
+    "TAC": {
+      "word": "thunder",
+      "semantic_score": 2.8201,
+      "word_frequency": 1.38e-05,
+      "gene_function": "circadian"
+    },
+    "GCG": {
+      "word": "scream",
+      "semantic_score": 2.7503,
+      "word_frequency": 1.38e-05,
+      "gene_function": "circadian"
+    },
+    "TCC": {
+      "word": "eternal",
+      "semantic_score": 2.757,
+      "word_frequency": 1.29e-05,
+      "gene_function": "circadian"
+    },
+    "CCG": {
+      "word": "exhausted",
+      "semantic_score": 2.656,
+      "word_frequency": 1.2e-05,
+      "gene_function": "circadian"
+    },
+    "CGT": {
+      "word": "answering",
+      "semantic_score": 2.704,
+      "word_frequency": 1.17e-05,
+      "gene_function": "circadian"
+    },
+    "GCC": {
+      "word": "pulse",
+      "semantic_score": 2.7458,
+      "word_frequency": 1.15e-05,
+      "gene_function": "circadian"
+    },
+    "ACG": {
+      "word": "rhythm",
+      "semantic_score": 3.2659,
+      "word_frequency": 1.12e-05,
+      "gene_function": "circadian"
+    },
+    "CGC": {
+      "word": "finale",
+      "semantic_score": 2.7927,
+      "word_frequency": 1.1e-05,
+      "gene_function": "circadian"
+    }
+  },
+  "photosynthesis": {
+    "GGT": {
+      "word": "power",
+      "semantic_score": 3.2695,
+      "word_frequency": 0.000331,
+      "gene_function": "photosynthesis"
+    },
+    "GCC": {
+      "word": "water",
+      "semantic_score": 2.8872,
+      "word_frequency": 0.000331,
+      "gene_function": "photosynthesis"
+    },
+    "GAC": {
+      "word": "white",
+      "semantic_score": 2.833,
+      "word_frequency": 0.000324,
+      "gene_function": "photosynthesis"
+    },
+    "GAA": {
+      "word": "black",
+      "semantic_score": 2.8336,
+      "word_frequency": 0.000288,
+      "gene_function": "photosynthesis"
+    },
+    "GTT": {
+      "word": "matter",
+      "semantic_score": 2.8446,
+      "word_frequency": 0.00024,
+      "gene_function": "photosynthesis"
+    },
+    "ACC": {
+      "word": "air",
+      "semantic_score": 2.8811,
+      "word_frequency": 0.000234,
+      "gene_function": "photosynthesis"
+    },
+    "CTG": {
+      "word": "light",
+      "semantic_score": 3.8327,
+      "word_frequency": 0.000214,
+      "gene_function": "photosynthesis"
+    },
+    "GGC": {
+      "word": "red",
+      "semantic_score": 2.9385,
+      "word_frequency": 0.000209,
+      "gene_function": "photosynthesis"
+    },
+    "GTC": {
+      "word": "fire",
+      "semantic_score": 2.7918,
+      "word_frequency": 0.0002,
+      "gene_function": "photosynthesis"
+    },
+    "ATC": {
+      "word": "energy",
+      "semantic_score": 3.5111,
+      "word_frequency": 0.00017,
+      "gene_function": "photosynthesis"
+    },
+    "GAG": {
+      "word": "green",
+      "semantic_score": 3.1142,
+      "word_frequency": 0.000135,
+      "gene_function": "photosynthesis"
+    },
+    "AAA": {
+      "word": "blue",
+      "semantic_score": 3.0449,
+      "word_frequency": 0.000135,
+      "gene_function": "photosynthesis"
+    },
+    "AAG": {
+      "word": "science",
+      "semantic_score": 2.8074,
+      "word_frequency": 0.000132,
+      "gene_function": "photosynthesis"
+    },
+    "ATG": {
+      "word": "led",
+      "semantic_score": 3.2784,
+      "word_frequency": 0.000129,
+      "gene_function": "photosynthesis"
+    },
+    "CTC": {
+      "word": "dark",
+      "semantic_score": 3.0341,
+      "word_frequency": 0.00011,
+      "gene_function": "photosynthesis"
+    },
+    "TAC": {
+      "word": "gas",
+      "semantic_score": 2.8944,
+      "word_frequency": 0.000102,
+      "gene_function": "photosynthesis"
+    },
+    "ATT": {
+      "word": "sun",
+      "semantic_score": 3.0571,
+      "word_frequency": 9.33e-05,
+      "gene_function": "photosynthesis"
+    },
+    "CAG": {
+      "word": "ability",
+      "semantic_score": 2.7698,
+      "word_frequency": 9.12e-05,
+      "gene_function": "photosynthesis"
+    },
+    "TCC": {
+      "word": "material",
+      "semantic_score": 2.9469,
+      "word_frequency": 8.91e-05,
+      "gene_function": "photosynthesis"
+    },
+    "CGC": {
+      "word": "product",
+      "semantic_score": 2.7528,
+      "word_frequency": 8.91e-05,
+      "gene_function": "photosynthesis"
+    },
+    "CCG": {
+      "word": "image",
+      "semantic_score": 2.7742,
+      "word_frequency": 8.71e-05,
+      "gene_function": "photosynthesis"
+    },
+    "TTC": {
+      "word": "color",
+      "semantic_score": 3.2965,
+      "word_frequency": 8.13e-05,
+      "gene_function": "photosynthesis"
+    },
+    "AAC": {
+      "word": "plant",
+      "semantic_score": 3.0813,
+      "word_frequency": 7.76e-05,
+      "gene_function": "photosynthesis"
+    },
+    "GCG": {
+      "word": "heat",
+      "semantic_score": 3.2283,
+      "word_frequency": 7.24e-05,
+      "gene_function": "photosynthesis"
+    },
+    "TGC": {
+      "word": "powerful",
+      "semantic_score": 3.04,
+      "word_frequency": 7.08e-05,
+      "gene_function": "photosynthesis"
+    },
+    "CCC": {
+      "word": "leaves",
+      "semantic_score": 2.8913,
+      "word_frequency": 6.17e-05,
+      "gene_function": "photosynthesis"
+    },
+    "GAT": {
+      "word": "reaction",
+      "semantic_score": 2.8947,
+      "word_frequency": 5.37e-05,
+      "gene_function": "photosynthesis"
+    },
+    "TGT": {
+      "word": "fuel",
+      "semantic_score": 2.9248,
+      "word_frequency": 5.25e-05,
+      "gene_function": "photosynthesis"
+    },
+    "GTG": {
+      "word": "electric",
+      "semantic_score": 2.7736,
+      "word_frequency": 5.25e-05,
+      "gene_function": "photosynthesis"
+    },
+    "TCG": {
+      "word": "powers",
+      "semantic_score": 2.9824,
+      "word_frequency": 5.01e-05,
+      "gene_function": "photosynthesis"
+    },
+    "CGT": {
+      "word": "applied",
+      "semantic_score": 2.779,
+      "word_frequency": 4.68e-05,
+      "gene_function": "photosynthesis"
+    },
+    "CAT": {
+      "word": "lights",
+      "semantic_score": 3.2493,
+      "word_frequency": 4.37e-05,
+      "gene_function": "photosynthesis"
+    },
+    "ACG": {
+      "word": "orange",
+      "semantic_score": 2.8278,
+      "word_frequency": 4.17e-05,
+      "gene_function": "photosynthesis"
+    },
+    "GTA": {
+      "word": "bright",
+      "semantic_score": 2.928,
+      "word_frequency": 4.07e-05,
+      "gene_function": "photosynthesis"
+    },
+    "TTA": {
+      "word": "fruit",
+      "semantic_score": 2.8345,
+      "word_frequency": 3.72e-05,
+      "gene_function": "photosynthesis"
+    },
+    "CGA": {
+      "word": "solar",
+      "semantic_score": 2.8776,
+      "word_frequency": 3.39e-05,
+      "gene_function": "photosynthesis"
+    },
+    "ACA": {
+      "word": "expressed",
+      "semantic_score": 2.8951,
+      "word_frequency": 3.31e-05,
+      "gene_function": "photosynthesis"
+    },
+    "ACT": {
+      "word": "colour",
+      "semantic_score": 3.2215,
+      "word_frequency": 3.09e-05,
+      "gene_function": "photosynthesis"
+    },
+    "AAT": {
+      "word": "grey",
+      "semantic_score": 2.8358,
+      "word_frequency": 3.02e-05,
+      "gene_function": "photosynthesis"
+    },
+    "GGG": {
+      "word": "colors",
+      "semantic_score": 2.9813,
+      "word_frequency": 2.88e-05,
+      "gene_function": "photosynthesis"
+    },
+    "TTT": {
+      "word": "gray",
+      "semantic_score": 2.9307,
+      "word_frequency": 2.82e-05,
+      "gene_function": "photosynthesis"
+    }
+  },
+  "stress_response": {
+    "ACA": {
+      "word": "line",
+      "semantic_score": 2.6214,
+      "word_frequency": 0.000309,
+      "gene_function": "stress_response"
+    },
+    "AAA": {
+      "word": "force",
+      "semantic_score": 2.762,
+      "word_frequency": 0.00017,
+      "gene_function": "stress_response"
+    },
+    "TAC": {
+      "word": "fight",
+      "semantic_score": 2.7019,
+      "word_frequency": 0.00017,
+      "gene_function": "stress_response"
+    },
+    "AAC": {
+      "word": "security",
+      "semantic_score": 2.6705,
+      "word_frequency": 0.000158,
+      "gene_function": "stress_response"
+    },
+    "TCT": {
+      "word": "attack",
+      "semantic_score": 3.0873,
+      "word_frequency": 0.000123,
+      "gene_function": "stress_response"
+    },
+    "CCA": {
+      "word": "wall",
+      "semantic_score": 2.9858,
+      "word_frequency": 0.00011,
+      "gene_function": "stress_response"
+    },
+    "TTC": {
+      "word": "pressure",
+      "semantic_score": 3.258,
+      "word_frequency": 0.000102,
+      "gene_function": "stress_response"
+    },
+    "GAG": {
+      "word": "material",
+      "semantic_score": 2.6454,
+      "word_frequency": 8.91e-05,
+      "gene_function": "stress_response"
+    },
+    "TTT": {
+      "word": "contract",
+      "semantic_score": 2.9912,
+      "word_frequency": 8.71e-05,
+      "gene_function": "stress_response"
+    },
+    "ATC": {
+      "word": "battle",
+      "semantic_score": 2.6983,
+      "word_frequency": 8.71e-05,
+      "gene_function": "stress_response"
+    },
+    "CAT": {
+      "word": "defense",
+      "semantic_score": 3.1128,
+      "word_frequency": 8.51e-05,
+      "gene_function": "stress_response"
+    },
+    "ATT": {
+      "word": "protect",
+      "semantic_score": 3.0613,
+      "word_frequency": 8.32e-05,
+      "gene_function": "stress_response"
+    },
+    "TTG": {
+      "word": "competition",
+      "semantic_score": 2.6235,
+      "word_frequency": 8.13e-05,
+      "gene_function": "stress_response"
+    },
+    "AGA": {
+      "word": "block",
+      "semantic_score": 2.8387,
+      "word_frequency": 7.59e-05,
+      "gene_function": "stress_response"
+    },
+    "AAT": {
+      "word": "challenge",
+      "semantic_score": 2.7393,
+      "word_frequency": 7.59e-05,
+      "gene_function": "stress_response"
+    },
+    "CCT": {
+      "word": "heat",
+      "semantic_score": 2.7276,
+      "word_frequency": 7.24e-05,
+      "gene_function": "stress_response"
+    },
+    "AAG": {
+      "word": "protection",
+      "semantic_score": 2.9198,
+      "word_frequency": 7.08e-05,
+      "gene_function": "stress_response"
+    },
+    "AGT": {
+      "word": "covered",
+      "semantic_score": 2.7661,
+      "word_frequency": 6.76e-05,
+      "gene_function": "stress_response"
+    },
+    "CAA": {
+      "word": "guard",
+      "semantic_score": 2.9429,
+      "word_frequency": 5.37e-05,
+      "gene_function": "stress_response"
+    },
+    "GAA": {
+      "word": "victory",
+      "semantic_score": 2.6316,
+      "word_frequency": 5.37e-05,
+      "gene_function": "stress_response"
+    },
+    "GTT": {
+      "word": "hits",
+      "semantic_score": 2.63,
+      "word_frequency": 4.47e-05,
+      "gene_function": "stress_response"
+    },
+    "ACT": {
+      "word": "secure",
+      "semantic_score": 2.7378,
+      "word_frequency": 4.37e-05,
+      "gene_function": "stress_response"
+    },
+    "CTT": {
+      "word": "walls",
+      "semantic_score": 2.7136,
+      "word_frequency": 4.17e-05,
+      "gene_function": "stress_response"
+    },
+    "TAT": {
+      "word": "champion",
+      "semantic_score": 2.6491,
+      "word_frequency": 4.17e-05,
+      "gene_function": "stress_response"
+    },
+    "GAT": {
+      "word": "threat",
+      "semantic_score": 2.7822,
+      "word_frequency": 3.98e-05,
+      "gene_function": "stress_response"
+    },
+    "CTC": {
+      "word": "holds",
+      "semantic_score": 2.6172,
+      "word_frequency": 3.98e-05,
+      "gene_function": "stress_response"
+    },
+    "TCC": {
+      "word": "kiss",
+      "semantic_score": 2.6107,
+      "word_frequency": 3.8e-05,
+      "gene_function": "stress_response"
+    },
+    "TCA": {
+      "word": "resistance",
+      "semantic_score": 2.6919,
+      "word_frequency": 3.55e-05,
+      "gene_function": "stress_response"
+    },
+    "ATG": {
+      "word": "depth",
+      "semantic_score": 2.6901,
+      "word_frequency": 3.55e-05,
+      "gene_function": "stress_response"
+    },
+    "GTG": {
+      "word": "defence",
+      "semantic_score": 3.0803,
+      "word_frequency": 3.24e-05,
+      "gene_function": "stress_response"
+    },
+    "GGC": {
+      "word": "protected",
+      "semantic_score": 2.6565,
+      "word_frequency": 3.24e-05,
+      "gene_function": "stress_response"
+    },
+    "CAC": {
+      "word": "defend",
+      "semantic_score": 3.1841,
+      "word_frequency": 2.95e-05,
+      "gene_function": "stress_response"
+    },
+    "CAG": {
+      "word": "bound",
+      "semantic_score": 2.7186,
+      "word_frequency": 2.88e-05,
+      "gene_function": "stress_response"
+    },
+    "TTA": {
+      "word": "covering",
+      "semantic_score": 2.7269,
+      "word_frequency": 2.82e-05,
+      "gene_function": "stress_response"
+    },
+    "CTG": {
+      "word": "enforcement",
+      "semantic_score": 2.6357,
+      "word_frequency": 2.82e-05,
+      "gene_function": "stress_response"
+    },
+    "GCT": {
+      "word": "blocks",
+      "semantic_score": 2.6234,
+      "word_frequency": 2.69e-05,
+      "gene_function": "stress_response"
+    },
+    "GCA": {
+      "word": "belt",
+      "semantic_score": 2.8146,
+      "word_frequency": 2.63e-05,
+      "gene_function": "stress_response"
+    },
+    "TGC": {
+      "word": "demands",
+      "semantic_score": 2.7444,
+      "word_frequency": 2.57e-05,
+      "gene_function": "stress_response"
+    },
+    "ACC": {
+      "word": "knife",
+      "semantic_score": 2.6075,
+      "word_frequency": 2.57e-05,
+      "gene_function": "stress_response"
+    },
+    "CGC": {
+      "word": "signing",
+      "semantic_score": 2.6604,
+      "word_frequency": 2.51e-05,
+      "gene_function": "stress_response"
+    },
+    "CCC": {
+      "word": "defensive",
+      "semantic_score": 2.6913,
+      "word_frequency": 2.4e-05,
+      "gene_function": "stress_response"
+    },
+    "TGT": {
+      "word": "threatened",
+      "semantic_score": 2.6633,
+      "word_frequency": 2.29e-05,
+      "gene_function": "stress_response"
+    },
+    "GGA": {
+      "word": "coat",
+      "semantic_score": 2.6149,
+      "word_frequency": 2.29e-05,
+      "gene_function": "stress_response"
+    },
+    "AGC": {
+      "word": "defending",
+      "semantic_score": 2.9449,
+      "word_frequency": 2.14e-05,
+      "gene_function": "stress_response"
+    },
+    "CGA": {
+      "word": "uniform",
+      "semantic_score": 2.7077,
+      "word_frequency": 2.14e-05,
+      "gene_function": "stress_response"
+    },
+    "AGG": {
+      "word": "bite",
+      "semantic_score": 2.659,
+      "word_frequency": 2.04e-05,
+      "gene_function": "stress_response"
+    },
+    "TCG": {
+      "word": "seal",
+      "semantic_score": 3.4131,
+      "word_frequency": 2e-05,
+      "gene_function": "stress_response"
+    },
+    "GAC": {
+      "word": "protecting",
+      "semantic_score": 2.998,
+      "word_frequency": 2e-05,
+      "gene_function": "stress_response"
+    },
+    "GTC": {
+      "word": "attacking",
+      "semantic_score": 2.7668,
+      "word_frequency": 1.95e-05,
+      "gene_function": "stress_response"
+    },
+    "GTA": {
+      "word": "boundaries",
+      "semantic_score": 3.2758,
+      "word_frequency": 1.78e-05,
+      "gene_function": "stress_response"
+    },
+    "ATA": {
+      "word": "secured",
+      "semantic_score": 2.9116,
+      "word_frequency": 1.7e-05,
+      "gene_function": "stress_response"
+    },
+    "GGT": {
+      "word": "tension",
+      "semantic_score": 2.7715,
+      "word_frequency": 1.66e-05,
+      "gene_function": "stress_response"
+    },
+    "TAA": {
+      "word": "resist",
+      "semantic_score": 3.1721,
+      "word_frequency": 1.58e-05,
+      "gene_function": "stress_response"
+    },
+    "TGA": {
+      "word": "opponent",
+      "semantic_score": 2.6802,
+      "word_frequency": 1.58e-05,
+      "gene_function": "stress_response"
+    },
+    "TGG": {
+      "word": "threatening",
+      "semantic_score": 2.6072,
+      "word_frequency": 1.55e-05,
+      "gene_function": "stress_response"
+    },
+    "CTA": {
+      "word": "barrier",
+      "semantic_score": 3.11,
+      "word_frequency": 1.41e-05,
+      "gene_function": "stress_response"
+    },
+    "CCG": {
+      "word": "compromise",
+      "semantic_score": 2.6171,
+      "word_frequency": 1.41e-05,
+      "gene_function": "stress_response"
+    },
+    "ACG": {
+      "word": "justify",
+      "semantic_score": 2.6509,
+      "word_frequency": 1.38e-05,
+      "gene_function": "stress_response"
+    },
+    "TAG": {
+      "word": "boundary",
+      "semantic_score": 3.21,
+      "word_frequency": 1.35e-05,
+      "gene_function": "stress_response"
+    },
+    "GCG": {
+      "word": "demanding",
+      "semantic_score": 2.8545,
+      "word_frequency": 1.35e-05,
+      "gene_function": "stress_response"
+    },
+    "GGG": {
+      "word": "protective",
+      "semantic_score": 2.7501,
+      "word_frequency": 1.35e-05,
+      "gene_function": "stress_response"
+    },
+    "CGT": {
+      "word": "sealed",
+      "semantic_score": 2.766,
+      "word_frequency": 1.32e-05,
+      "gene_function": "stress_response"
+    },
+    "GCC": {
+      "word": "pressed",
+      "semantic_score": 2.7508,
+      "word_frequency": 1.32e-05,
+      "gene_function": "stress_response"
+    },
+    "CGG": {
+      "word": "defender",
+      "semantic_score": 2.8206,
+      "word_frequency": 1.29e-05,
+      "gene_function": "stress_response"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+# MacOS
+.DS_Store
+
+# datasets, results, runs
+training/data
+training/runs

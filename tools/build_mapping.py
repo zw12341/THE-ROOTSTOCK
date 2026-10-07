@@ -1,8 +1,8 @@
 """
 THE ROOTSTOCK — Codon-to-Word Mapping Builder
 ==============================================
-Offline preprocessing script. Run once to generate codon_word_mapping.json,
-which is then loaded at runtime by rootstock.py.
+Offline preprocessing script. Run once to generate codon_word_mapping.json in
+the repository root, where it is loaded at runtime by rootstock.py.
 
 This script bridges molecular biology and poetic language by:
   1. Fetching real Arabidopsis thaliana gene sequences from NCBI
@@ -39,6 +39,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 from wordfreq import top_n_list, word_frequency
 import numpy as np
 import json
+from pathlib import Path
+
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+OUTPUT_PATH = ROOT_DIR / "codon_word_mapping.json"
 
 # ── Fetch gene sequences from NCBI ────────────────────────────────────────────
 
@@ -241,7 +246,7 @@ def build_mapping_table(codon_freqs: dict, semantic_pools: dict) -> dict:
 
 mapping_table = build_mapping_table(codon_freqs, semantic_pools)
 
-with open('codon_word_mapping.json', 'w') as f:
+with OUTPUT_PATH.open('w') as f:
     json.dump(mapping_table, f, indent=2)
 
-print("\n✓ codon_word_mapping.json saved")
+print(f"\n✓ {OUTPUT_PATH.name} saved to {OUTPUT_PATH}")
